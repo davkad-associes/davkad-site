@@ -3,410 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DAVKAD ASSOCIES</title>
-
+<title>DAVKAD ASSOCIES - Investissements responsables</title>
+<meta name="description" content="DAVKAD ASSOCIES accompagne les foyers dans le développement patrimonial durable, les optimisations fiscales et les investissements responsables.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="DAVKAD ASSOCIES">
+<link rel="canonical" href="https://www.davkad.fr/">
+<link rel="icon" type="image/png" href="images/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="DAVKAD ASSOCIES">
+<meta property="og:title" content="DAVKAD ASSOCIES - Investissements responsables">
+<meta property="og:description" content="DAVKAD ASSOCIES accompagne les foyers dans le développement patrimonial durable, les optimisations fiscales et les investissements responsables.">
+<meta property="og:image" content="https://www.davkad.fr/images/logo.png">
+<meta property="og:url" content="https://www.davkad.fr/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="style.css">
-
-<style>
-
-/* POPUP */
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-.popup.active {
-  display: flex;
-}
-
-.popup-content {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 600px;
-  position: relative;
-  animation: fadeIn 0.4s ease;
-}
-
-@keyframes fadeIn {
-  from {opacity:0; transform: translateY(30px);}
-  to {opacity:1; transform: translateY(0);}
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* FORMULAIRE GRID */
-.contact-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-}
-
-/* INPUT AVEC ICÔNES */
-.input-group {
-  position: relative;
-}
-
-.input-group i {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #888;
-  font-size: 14px;
-}
-
-.input-group input,
-.input-group select {
-  width: 100%;
-  padding: 12px 12px 12px 35px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-}
-
-/* ANIMATION FOCUS */
-.input-group input:focus,
-.input-group select:focus {
-  border-color: #0b3d91;
-  box-shadow: 0 0 0 3px rgba(11,61,145,0.1);
-  outline: none;
-}
-
-/* PLEINE LARGEUR */
-.full {
-  grid-column: span 2;
-}
-
-/* BOUTON PREMIUM */
-.contact-form button {
-  grid-column: span 2;
-  padding: 14px;
-  background: linear-gradient(135deg, #0b3d91, #1e5bd7);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-.contact-form button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* CARTE + FOND DEGRADE */
-.contact-scroll {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1s ease;
-  width: 90%;
-  max-width: 1100px;
-  margin: 80px auto;
-  padding: 50px;
-  border-radius: 15px;
-
-  background: linear-gradient(135deg, #f5f8ff, #eef3ff);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-}
-
-.contact-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* PRESENTATION */
-.presentation {
-  font-size: 20px;
-  line-height: 1.8;
-}
-
-.presentation h2 {
-  font-size: 34px;
-}
-
-.presentation p {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* SECOND CADRE */
-.presentation-secondaire {
-  background: rgba(255,255,255,0.95);
-  margin: 30px auto;
-  padding: 50px 40px;
-  max-width: 1000px;
-  border-radius: 12px;
-  font-size: 20px;
-  line-height: 1.8;
-}
-
-/* INFOGRAPHIE */
-.infographie {
-  width: 82%;
-  max-width: 1050px;
-  margin: 50px auto 20px auto;
-}
-
-.infographie img {
-  width: 100%;
-  border-radius: 18px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  display: block;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-
-  .contact-form {
-    grid-template-columns: 1fr;
-  }
-
-  .full {
-    grid-column: span 1;
-  }
-
-}
-
-</style>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
-
 <body>
-
 <header>
-
-  <nav>
+  <nav aria-label="Navigation principale">
     <a href="index.html">Accueil</a>
     <a href="cabinet.html">Le cabinet</a>
     <a href="optimisations.html">Optimisations fiscales</a>
     <a href="patrimoine.html">Développement patrimonial durable</a>
-    <a href="#contact-formulaire">Contact</a>
+    <a href="index.html#contact-formulaire">Contact</a>
     <a href="client.html">Accès client</a>
   </nav>
-
-  <div class="logo">
-    <img src="images/logo.png" alt="DAVKAD ASSOCIES">
-  </div>
-
+  <div class="logo"><a href="index.html"><img src="images/logo.png" alt="DAVKAD ASSOCIES - Investissements responsables" loading="eager"></a></div>
 </header>
 
-<!-- SLIDER -->
-<section class="slider">
-
-  <div class="slide slide1 active">
-    <div class="content">
-      <h1>Investissements responsables</h1>
-      <p>Une approche financière durable et engagée</p>
-    </div>
-  </div>
-
-  <div class="slide slide2">
-    <div class="content">
-      <h1>Conseil stratégique</h1>
-      <p>Des décisions éclairées pour une croissance durable</p>
-    </div>
-  </div>
-
-  <div class="slide slide3">
-    <div class="content">
-      <h1>Expertise financière</h1>
-      <p>Analyse précise et accompagnement sur mesure</p>
-    </div>
-  </div>
-
-  <div class="slide slide4">
-    <div class="content">
-      <h1>Vision long terme</h1>
-      <p>Construire l’avenir avec responsabilité</p>
-    </div>
-  </div>
-
+<section class="slider" aria-label="Présentation DAVKAD ASSOCIES">
+  <div class="slide slide1 active"><div class="content"><h1>Investissements responsables</h1><p>Une approche financière durable et engagée</p></div></div>
+  <div class="slide slide2"><div class="content"><h1>Conseil stratégique</h1><p>Des décisions éclairées pour une croissance durable</p></div></div>
+  <div class="slide slide3"><div class="content"><h1>Expertise financière</h1><p>Analyse précise et accompagnement sur mesure</p></div></div>
+  <div class="slide slide4"><div class="content"><h1>Vision long terme</h1><p>Construire l’avenir avec responsabilité</p></div></div>
 </section>
-
-<!-- PRESENTATION -->
-<section class="section presentation">
-
-  <h2>Présentation</h2>
-
-  <p>
-    Le cabinet Davkad se divise en deux entités : le pôle de développement de patrimoine et le pôle audit fiscal au sein duquel évolue une équipe de conseillers au service de votre foyer fiscal. Chaque fiscaliste prend en charge la réduction de l’imposition du contribuable lors d’une consultation annuelle, trimestrielle ou mensuelle. En 2021, pour répondre à la demande de ses clients, Davkad a créé une entité spécialisée dans l’investissement socialement responsable.
-  </p>
-
-</section>
-
-<!-- SECOND CADRE -->
-<section class="presentation-secondaire">
-
-  <p>
-    Nos principaux partenaires sont VIE PLUS, LCL HABITAT, MMA EXPERTISE PATRIMOINE et COGEDIM.
-    Nos six engagements sont l'indépendance, la performance, l'éthique, la transparence, la disponibilité et la confidentialité.
-  </p>
-
-</section>
-
-<!-- INFOGRAPHIE -->
-<section class="infographie">
-  <img src="images/infographie-davkad.png" alt="Infographie DAVKAD ASSOCIES">
-</section>
-
-<!-- FORMULAIRE -->
-<section class="contact-scroll" id="contact-formulaire">
-
-  <h2>Nous contacter</h2>
-
-  <form class="contact-form" action="https://formspree.io/f/mjglylrj" method="POST">
-
-    <div class="input-group">
-      <i class="fa fa-user"></i>
-      <input type="text" name="nom" placeholder="Nom *" required>
-    </div>
-
-    <div class="input-group">
-      <i class="fa fa-user"></i>
-      <input type="text" name="prenom" placeholder="Prénom *" required>
-    </div>
-
-    <div class="input-group full">
-      <i class="fa fa-envelope"></i>
-      <input type="email" name="email" placeholder="Email *" required>
-    </div>
-
-    <div class="input-group">
-      <i class="fa fa-phone"></i>
-      <input type="tel" name="telephone" placeholder="Téléphone mobile">
-    </div>
-
-    <div class="input-group">
-      <i class="fa fa-calendar"></i>
-      <input type="number" name="age" placeholder="Âge">
-    </div>
-
-    <div class="input-group full">
-      <i class="fa fa-briefcase"></i>
-      <input type="text" name="profession" placeholder="Profession">
-    </div>
-
-    <div class="input-group full">
-      <i class="fa fa-euro-sign"></i>
-
-      <select name="revenu">
-        <option value="">Tranche de revenu</option>
-        <option>0 à 30 000 € par an</option>
-        <option>30 001 à 50 000 € par an</option>
-        <option>50 001 à 80 000 € par an</option>
-        <option>Plus de 80 000 € par an</option>
-      </select>
-    </div>
-
+<section class="section presentation"><h2>Présentation</h2><p>Le cabinet Davkad se divise en deux entités : le pôle de développement de patrimoine et le pôle audit fiscal au sein duquel évolue une équipe de conseillers au service de votre foyer fiscal. Chaque fiscaliste prend en charge la réduction de l’imposition du contribuable lors d’une consultation annuelle, trimestrielle ou mensuelle. En 2021, pour répondre à la demande de ses clients, Davkad a créé une entité spécialisée dans l’investissement socialement responsable.</p></section>
+<section class="presentation-secondaire"><p>Nos principaux partenaires sont VIE PLUS, LCL HABITAT, MMA EXPERTISE PATRIMOINE et COGEDIM. Nos six engagements sont l'indépendance, la performance, l'éthique, la transparence, la disponibilité et la confidentialité.</p></section>
+<section class="infographie"><img src="images/infographie-davkad.png" alt="DAVKAD en chiffres : 2000 clients, 100 millions d'euros d'investissements, 10000 opérations, 7 ans d'existence" loading="lazy"></section>
+<section class="contact-scroll" id="contact-formulaire"><h2>Nous contacter</h2><form class="contact-form" action="https://formspree.io/f/mjglylrj" method="POST">
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+    <div class="input-group"><i class="fa fa-user"></i><input type="text" name="nom" placeholder="Nom *" required></div>
+    <div class="input-group"><i class="fa fa-user"></i><input type="text" name="prenom" placeholder="Prénom *" required></div>
+    <div class="input-group full"><i class="fa fa-envelope"></i><input type="email" name="email" placeholder="Email *" required></div>
+    <div class="input-group"><i class="fa fa-phone"></i><input type="tel" name="telephone" placeholder="Téléphone mobile"></div>
+    <div class="input-group"><i class="fa fa-calendar"></i><input type="number" name="age" placeholder="Âge"></div>
+    <div class="input-group full"><i class="fa fa-briefcase"></i><input type="text" name="profession" placeholder="Profession"></div>
+    <div class="input-group full"><i class="fa fa-euro-sign"></i><select name="revenu"><option value="">Tranche de revenu</option><option>0 à 30 000 € par an</option><option>30 001 à 50 000 € par an</option><option>50 001 à 80 000 € par an</option><option>Plus de 80 000 € par an</option></select></div>
     <button type="submit">Envoyer</button>
-
-  </form>
-
-</section>
-
-<!-- POPUP -->
-<div class="popup" id="contactPopup">
-
+  </form></section>
+<div class="popup" id="contactPopup" aria-hidden="true">
   <div class="popup-content">
-
-    <span class="close-btn" onclick="closePopup()">&times;</span>
-
+    <span class="close-btn" onclick="closePopup()" aria-label="Fermer">&times;</span>
     <h2>Nous contacter</h2>
-
     <form class="contact-form" action="https://formspree.io/f/mjglylrj" method="POST">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="input-group"><i class="fa fa-user"></i><input type="text" name="nom" placeholder="Nom *" required></div>
+      <div class="input-group"><i class="fa fa-user"></i><input type="text" name="prenom" placeholder="Prénom *" required></div>
+      <div class="input-group full"><i class="fa fa-envelope"></i><input type="email" name="email" placeholder="Email *" required></div>
+      <div class="input-group"><i class="fa fa-phone"></i><input type="tel" name="telephone" placeholder="Téléphone mobile"></div>
+      <div class="input-group"><i class="fa fa-calendar"></i><input type="number" name="age" placeholder="Âge"></div>
+      <div class="input-group full"><i class="fa fa-briefcase"></i><input type="text" name="profession" placeholder="Profession"></div>
+      <div class="input-group full"><i class="fa fa-euro-sign"></i><select name="revenu"><option value="">Tranche de revenu</option><option>0 à 30 000 € par an</option><option>30 001 à 50 000 € par an</option><option>50 001 à 80 000 € par an</option><option>Plus de 80 000 € par an</option></select></div>
+      <button type="submit">Envoyer</button>
     </form>
-
   </div>
-
 </div>
-
-<footer style="background: #0b3d91; color: white; padding: 20px; text-align: center;">
-
-  <p>
-    <a href="#contact-formulaire" style="color:white; margin: 0 15px;">Contact</a>
-    |
-    <a href="mentions.html" style="color:white; margin: 0 15px;">Mentions légales</a>
-  </p>
-
+<footer>
+  <p><a href="index.html#contact-formulaire">Contact</a> | <a href="mentions.html">Mentions légales</a></p>
   <p>Mis à jour le 30/03/2026</p>
-
   <p>© 2026 DAVKAD ASSOCIES</p>
-
 </footer>
-
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-
-  let index = 0;
-  const slides = document.querySelectorAll(".slide");
-
-  function showSlide() {
-
-    slides.forEach(slide => slide.classList.remove("active"));
-
-    index = (index + 1) % slides.length;
-
-    slides[index].classList.add("active");
-  }
-
-  setInterval(showSlide, 5000);
-
-  const section = document.querySelector(".contact-scroll");
-
-  function reveal() {
-
-    const trigger = window.innerHeight * 0.85;
-    const top = section.getBoundingClientRect().top;
-
-    if (top < trigger) {
-      section.classList.add("visible");
-    }
-  }
-
-  window.addEventListener("scroll", reveal);
-
-  reveal();
-
-});
-
-function openPopup() {
-  document.getElementById("contactPopup").classList.add("active");
-}
-
-function closePopup() {
-  document.getElementById("contactPopup").classList.remove("active");
-}
-
-window.onclick = function(e) {
-
-  const popup = document.getElementById("contactPopup");
-
-  if (e.target === popup) {
-    popup.classList.remove("active");
-  }
-}
-
-</script>
-
+<script src="script.js" defer></script>
 </body>
 </html>

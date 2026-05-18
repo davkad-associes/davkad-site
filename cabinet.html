@@ -4,501 +4,61 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Le cabinet - DAVKAD ASSOCIES</title>
-
+<meta name="description" content="Découvrez les engagements du cabinet DAVKAD ASSOCIES : indépendance, performance, éthique, transparence, disponibilité et confidentialité.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="DAVKAD ASSOCIES">
+<link rel="canonical" href="https://www.davkad.fr/">
+<link rel="icon" type="image/png" href="images/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="DAVKAD ASSOCIES">
+<meta property="og:title" content="Le cabinet - DAVKAD ASSOCIES">
+<meta property="og:description" content="Découvrez les engagements du cabinet DAVKAD ASSOCIES : indépendance, performance, éthique, transparence, disponibilité et confidentialité.">
+<meta property="og:image" content="https://www.davkad.fr/images/logo.png">
+<meta property="og:url" content="https://www.davkad.fr/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="style.css">
-
-<style>
-
-/* POPUP */
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-.popup.active {
-  display: flex;
-}
-
-.popup-content {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 600px;
-  position: relative;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* FORMULAIRE */
-.contact-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-}
-
-.input-group {
-  position: relative;
-}
-
-.input-group i {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #888;
-}
-
-.input-group input,
-.input-group select {
-  width: 100%;
-  padding: 12px 12px 12px 35px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.full {
-  grid-column: span 2;
-}
-
-.contact-form button {
-  grid-column: span 2;
-  padding: 14px;
-  background: linear-gradient(135deg, #0b3d91, #1e5bd7);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* HERO */
-.hero-cabinet {
-  height: 500px;
-  background-image: url("./images/slide7.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-cabinet::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255,255,255,0.45),
-    rgba(255,255,255,0.18)
-  );
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-}
-
-.hero-content h1 {
-  font-size: 60px;
-  margin-bottom: 20px;
-  color: #0b3d91;
-}
-
-.hero-content p {
-  font-size: 22px;
-  color: #0b3d91;
-  font-weight: 500;
-}
-
-/* SECTION */
-.section-cabinet {
-  width: 90%;
-  max-width: 1100px;
-  margin: 70px auto 80px;
-  padding: 55px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(10px);
-  border-top: 6px solid #0b3d91;
-  box-shadow: 0 18px 45px rgba(0,0,0,0.14);
-}
-
-/* BLOCS */
-.value-item {
-  display: flex;
-  align-items: center;
-  padding: 38px 0;
-  border-bottom: 1px solid rgba(11,61,145,0.14);
-  position: relative;
-}
-
-.value-item:last-child {
-  border-bottom: none;
-}
-
-/* ICONES */
-.icon-box {
-
-  position: absolute;
-  left: -10px;
-
-  min-width: 58px;
-  height: 58px;
-
-  border-radius: 14px;
-
-  background: linear-gradient(
-    135deg,
-    #f3f6fb,
-    #e8eef9
-  );
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  box-shadow:
-  inset 0 0 0 1px rgba(11,61,145,0.06);
-}
-
-.icon-box i {
-  font-size: 24px;
-  color: #0b3d91;
-}
-
-/* PARAGRAPHES */
-.value-content {
-
-  margin-left: 140px;
-}
-
-.value-content h2 {
-  color: #0b3d91;
-  font-size: 26px;
-  margin-bottom: 14px;
-}
-
-.value-content p {
-  color: #333;
-  font-size: 16px;
-  line-height: 1.75;
-  margin: 0;
-}
-
-/* CTA */
-.cta-container {
-  text-align: center;
-  margin: 80px 0;
-}
-
-.cta-container button {
-  padding: 15px 30px;
-  border: none;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #0b3d91, #1e5bd7);
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-/* RESPONSIVE */
-@media(max-width: 900px) {
-
-  .hero-content h1 {
-    font-size: 42px;
-  }
-
-  .hero-content p {
-    font-size: 18px;
-  }
-
-  .section-cabinet {
-    padding: 35px;
-  }
-
-  .value-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 25px;
-  }
-
-  .icon-box {
-    position: relative;
-    left: 0;
-  }
-
-  .value-content {
-    margin-left: 0;
-  }
-
-  .value-content h2 {
-    font-size: 24px;
-  }
-
-  .value-content p {
-    font-size: 15px;
-  }
-
-  .contact-form {
-    grid-template-columns: 1fr;
-  }
-
-  .full,
-  .contact-form button {
-    grid-column: span 1;
-  }
-}
-
-</style>
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
-
-<!-- HEADER -->
 <header>
-  <nav>
+  <nav aria-label="Navigation principale">
     <a href="index.html">Accueil</a>
     <a href="cabinet.html">Le cabinet</a>
     <a href="optimisations.html">Optimisations fiscales</a>
     <a href="patrimoine.html">Développement patrimonial durable</a>
-    <a href="#" onclick="openPopup()">Contact</a>
+    <a href="index.html#contact-formulaire">Contact</a>
     <a href="client.html">Accès client</a>
   </nav>
-
-  <div class="logo">
-    <img src="images/logo.png" alt="DAVKAD ASSOCIES">
-  </div>
+  <div class="logo"><a href="index.html"><img src="images/logo.png" alt="DAVKAD ASSOCIES - Investissements responsables" loading="eager"></a></div>
 </header>
 
-<!-- HERO -->
-<section class="hero-cabinet">
-  <div class="hero-content">
-    <h1>Le cabinet</h1>
-    <p>Un accompagnement indépendant, performant et responsable</p>
-  </div>
-</section>
-
-<!-- CONTENU -->
-<section class="section-cabinet">
-
-  <div class="value-item">
-    <div class="icon-box">
-      <i class="fa-solid fa-shield-halved"></i>
-    </div>
-
-    <div class="value-content">
-      <h2>Indépendance</h2>
-
-      <p>
-        Le cabinet DAVKAD est indépendant de tous ses partenaires, banque ou assurance.
-        Sa sélection de fonds d’investissement est donc uniquement liée à l’intérêt de ses clients.
-        Et de ce fait, l’indépendance et l’objectivité du conseil sont garanties.
-      </p>
-    </div>
-  </div>
-
-  <div class="value-item">
-    <div class="icon-box">
-      <i class="fa-solid fa-chart-line"></i>
-    </div>
-
-    <div class="value-content">
-      <h2>Performance</h2>
-
-      <p>
-        Notre équipe d’ingénieurs patrimoniaux a pour objectif de développer votre patrimoine.
-        Nous sélectionnons pour vous les supports d’investissement qui ont réalisés les meilleures
-        performances sur les dix dernières années.
-      </p>
-    </div>
-  </div>
-
-  <div class="value-item">
-    <div class="icon-box">
-      <i class="fa-solid fa-leaf"></i>
-    </div>
-
-    <div class="value-content">
-      <h2>Ethique</h2>
-
-      <p>
-        Le cabinet DAVKAD met en avant des solutions d’investissements responsables qui permettent
-        d’allier éthique et rentabilité. Les fonds ISR sélectionnés font l’objet d’analyses approfondies
-        liées à leurs engagements : impact sur l’environnement, développement de l’emploi…
-      </p>
-    </div>
-  </div>
-
-  <div class="value-item">
-    <div class="icon-box">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </div>
-
-    <div class="value-content">
-      <h2>Transparence</h2>
-
-      <p>
-        Nos clients sont parfaitement informés de la nature de leurs investissements ainsi que des frais afférents.
-        Cette politique leur permet d’être témoin de l’objectivité de nos préconisations.
-      </p>
-    </div>
-  </div>
-
-  <div class="value-item">
-    <div class="icon-box">
-      <i class="fa-regular fa-clock"></i>
-    </div>
-
-    <div class="value-content">
-      <h2>Disponibilité</h2>
-
-      <p>
-        Nous nous engageons à vous communiquer régulièrement l’évolution de votre portefeuille d’investissement.
-        En outre, nos ingénieurs patrimoniaux sont à la disposition de leurs clients pour évoquer avec eux
-        toute évolution du marché.
-      </p>
-    </div>
-  </div>
-
-  <div class="value-item">
-    <div class="icon-box">
-      <i class="fa-solid fa-lock"></i>
-    </div>
-
-    <div class="value-content">
-      <h2>Confidentialité</h2>
-
-      <p>
-        Le cabinet DAVKAD s’engage à préserver la confidentialité de chaque dossier
-        et à veiller à la protection de vos données.
-      </p>
-    </div>
-  </div>
-
-</section>
-
-<!-- CTA -->
-<div class="cta-container">
-  <button onclick="openPopup()">Prendre contact</button>
-</div>
-
-<!-- POPUP -->
-<div class="popup" id="contactPopup">
+<section class="hero hero-cabinet"><div class="hero-content"><h1>Le cabinet</h1><p>Un accompagnement indépendant, performant et responsable</p></div></section>
+<section class="section-card">
+  <div class="value-item"><div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div><div class="value-content"><h2>Indépendance</h2><p>Le cabinet DAVKAD est indépendant de tous ses partenaires, banque ou assurance. Sa sélection de fonds d’investissement est donc uniquement liée à l’intérêt de ses clients. Et de ce fait, l’indépendance et l’objectivité du conseil sont garanties.</p></div></div><div class="value-item"><div class="icon-box"><i class="fa-solid fa-chart-line"></i></div><div class="value-content"><h2>Performance</h2><p>Notre équipe d’ingénieurs patrimoniaux a pour objectif de développer votre patrimoine. Nous sélectionnons pour vous les supports d’investissement qui ont réalisé les meilleures performances sur les dix dernières années.</p></div></div><div class="value-item"><div class="icon-box"><i class="fa-solid fa-leaf"></i></div><div class="value-content"><h2>Éthique</h2><p>Le cabinet DAVKAD met en avant des solutions d’investissements responsables qui permettent d’allier éthique et rentabilité. Les fonds ISR sélectionnés font l’objet d’analyses approfondies liées à leurs engagements : impact sur l’environnement, développement de l’emploi…</p></div></div><div class="value-item"><div class="icon-box"><i class="fa-solid fa-magnifying-glass"></i></div><div class="value-content"><h2>Transparence</h2><p>Nos clients sont parfaitement informés de la nature de leurs investissements ainsi que des frais afférents. Cette politique leur permet d’être témoin de l’objectivité de nos préconisations.</p></div></div><div class="value-item"><div class="icon-box"><i class="fa-regular fa-clock"></i></div><div class="value-content"><h2>Disponibilité</h2><p>Nous nous engageons à vous communiquer régulièrement l’évolution de votre portefeuille d’investissement. En outre, nos ingénieurs patrimoniaux sont à la disposition de leurs clients pour évoquer avec eux toute évolution du marché.</p></div></div><div class="value-item"><div class="icon-box"><i class="fa-solid fa-lock"></i></div><div class="value-content"><h2>Confidentialité</h2><p>Le cabinet DAVKAD s’engage à préserver la confidentialité de chaque dossier et à veiller à la protection de vos données.</p></div></div></section><div class="cta-container"><button onclick="openPopup()">Prendre contact</button></div><div class="popup" id="contactPopup" aria-hidden="true">
   <div class="popup-content">
-
-    <span class="close-btn" onclick="closePopup()">&times;</span>
-
+    <span class="close-btn" onclick="closePopup()" aria-label="Fermer">&times;</span>
+    <h2>Nous contacter</h2>
     <form class="contact-form" action="https://formspree.io/f/mjglylrj" method="POST">
-
-      <div class="input-group">
-        <i class="fa fa-user"></i>
-        <input type="text" name="nom" placeholder="Nom *" required>
-      </div>
-
-      <div class="input-group">
-        <i class="fa fa-user"></i>
-        <input type="text" name="prenom" placeholder="Prénom *" required>
-      </div>
-
-      <div class="input-group full">
-        <i class="fa fa-envelope"></i>
-        <input type="email" name="email" placeholder="Email *" required>
-      </div>
-
-      <div class="input-group">
-        <i class="fa fa-phone"></i>
-        <input type="tel" name="telephone" placeholder="Téléphone mobile">
-      </div>
-
-      <div class="input-group">
-        <i class="fa fa-calendar"></i>
-        <input type="number" name="age" placeholder="Âge">
-      </div>
-
-      <div class="input-group full">
-        <i class="fa fa-briefcase"></i>
-        <input type="text" name="profession" placeholder="Profession">
-      </div>
-
-      <div class="input-group full">
-        <i class="fa fa-euro-sign"></i>
-
-        <select name="revenu">
-          <option value="">Tranche de revenu</option>
-          <option>0 à 30 000 €</option>
-          <option>30 000 – 50 000 €</option>
-          <option>50 000 – 80 000 €</option>
-          <option>80 000 € +</option>
-        </select>
-      </div>
-
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="input-group"><i class="fa fa-user"></i><input type="text" name="nom" placeholder="Nom *" required></div>
+      <div class="input-group"><i class="fa fa-user"></i><input type="text" name="prenom" placeholder="Prénom *" required></div>
+      <div class="input-group full"><i class="fa fa-envelope"></i><input type="email" name="email" placeholder="Email *" required></div>
+      <div class="input-group"><i class="fa fa-phone"></i><input type="tel" name="telephone" placeholder="Téléphone mobile"></div>
+      <div class="input-group"><i class="fa fa-calendar"></i><input type="number" name="age" placeholder="Âge"></div>
+      <div class="input-group full"><i class="fa fa-briefcase"></i><input type="text" name="profession" placeholder="Profession"></div>
+      <div class="input-group full"><i class="fa fa-euro-sign"></i><select name="revenu"><option value="">Tranche de revenu</option><option>0 à 30 000 € par an</option><option>30 001 à 50 000 € par an</option><option>50 001 à 80 000 € par an</option><option>Plus de 80 000 € par an</option></select></div>
       <button type="submit">Envoyer</button>
-
     </form>
-
   </div>
 </div>
-
-<!-- FOOTER -->
-<footer style="background:#0b3d91;color:white;padding:20px;text-align:center;">
-
-  <p>
-    <a href="#" onclick="openPopup()" style="color:white;">
-      Contact
-    </a>
-
-    |
-
-    <a href="mentions.html" style="color:white;">
-      Mentions légales
-    </a>
-  </p>
-
+<footer>
+  <p><a href="index.html#contact-formulaire">Contact</a> | <a href="mentions.html">Mentions légales</a></p>
+  <p>Mis à jour le 30/03/2026</p>
   <p>© 2026 DAVKAD ASSOCIES</p>
-
 </footer>
-
-<script>
-
-function openPopup() {
-  document.getElementById("contactPopup").classList.add("active");
-}
-
-function closePopup() {
-  document.getElementById("contactPopup").classList.remove("active");
-}
-
-window.onclick = function(e) {
-
-  const popup = document.getElementById("contactPopup");
-
-  if (e.target === popup) {
-    popup.classList.remove("active");
-  }
-}
-
-</script>
-
+<script src="script.js" defer></script>
 </body>
 </html>

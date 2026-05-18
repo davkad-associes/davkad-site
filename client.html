@@ -44,7 +44,7 @@
 
 /* HERO */
 .hero-client {
-  height: 90vh;
+  height: 500px;
   background: url("images/client.jpg") center/cover no-repeat;
   position: relative;
   display: flex;
@@ -56,13 +56,14 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(11,61,145,0.7), rgba(30,91,215,0.4));
+  background: linear-gradient(135deg, rgba(255,255,255,0.35), rgba(255,255,255,0.12));
 }
 
 .hero-content {
   position: relative;
-  color: white;
+  color: #0b3d91;
   text-align: center;
+  text-shadow: 0 4px 16px rgba(255,255,255,0.75);
 }
 
 .hero-content h1 {
@@ -78,12 +79,14 @@
 .login-container {
   width: 90%;
   max-width: 500px;
-  margin: -80px auto 80px;
+  margin: 70px auto 80px;
   padding: 50px;
   border-radius: 20px;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.96);
   backdrop-filter: blur(10px);
   text-align: center;
+  border-top: 6px solid #0b3d91;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.14);
 }
 
 .login-container h2 {
@@ -113,7 +116,7 @@
 .input-group input {
   width: 100%;
   padding: 14px 14px 14px 40px;
-  border: 1px solid #ccc;
+  border: 1px solid #c9d9ec;
   border-radius: 8px;
 }
 
@@ -129,6 +132,11 @@
 
 .login-form button:hover {
   opacity: 0.9;
+}
+
+/* FOND PAGE ACCES */
+body {
+  background: linear-gradient(to bottom, #eef6ff, #0d47a1);
 }
 
 /* FOOTER */

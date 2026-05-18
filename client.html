@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accès client - DAVKAD ASSOCIES</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* POPUP */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup.active { display: flex; }
+
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero-client {
+  height: 90vh;
+  background: url("images/client.jpg") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-client::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(11,61,145,0.7), rgba(30,91,215,0.4));
+}
+
+.hero-content {
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 22px;
+}
+
+/* LOGIN BOX */
+.login-container {
+  width: 90%;
+  max-width: 500px;
+  margin: -80px auto 80px;
+  padding: 50px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.login-container h2 {
+  color: #0b3d91;
+  margin-bottom: 30px;
+}
+
+/* FORM */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 14px 14px 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.login-form button {
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0b3d91, #1e5bd7);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  opacity: 0.9;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 80px;
+}
+
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="cabinet.html">Le cabinet</a>
+    <a href="optimisations.html">Optimisations fiscales</a>
+    <a href="patrimoine.html">Développement patrimonial durable</a>
+    <a href="#" onclick="openPopup()">Contact</a>
+    <a href="client.html">Accès client</a>
+  </nav>
+
+  <div class="logo">
+    <img src="images/logo.png" alt="DAVKAD ASSOCIES">
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero-client">
+  <div class="hero-content">
+    <h1>Espace client</h1>
+    <p>Accédez à votre espace sécurisé</p>
+  </div>
+</section>
+
+<!-- LOGIN -->
+<section class="login-container">
+  <h2>Connexion</h2>
+
+  <form class="login-form">
+
+    <div class="input-group">
+      <i class="fa fa-user"></i>
+      <input type="text" placeholder="Identifiant client" required>
+    </div>
+
+    <div class="input-group">
+      <i class="fa fa-lock"></i>
+      <input type="password" placeholder="Mot de passe" required>
+    </div>
+
+    <button type="submit">Se connecter</button>
+
+  </form>
+</section>
+
+<!-- POPUP CONTACT -->
+<div class="popup" id="contactPopup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+
+    <form class="login-form" action="https://formspree.io/f/mjglylrj" method="POST">
+      <div class="input-group">
+        <i class="fa fa-user"></i>
+        <input type="text" name="nom" placeholder="Nom *" required>
+      </div>
+
+      <div class="input-group">
+        <i class="fa fa-envelope"></i>
+        <input type="email" name="email" placeholder="Email *" required>
+      </div>
+
+      <button type="submit">Envoyer</button>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer style="background: #0b3d91; color: white; padding: 20px; text-align: center;">
+  <p>
+    <a href="#" onclick="openPopup()" style="color:white;">Contact</a> |
+    <a href="mentions-legales.html" style="color:white;">Mentions légales</a>
+  </p>
+  <p>© 2026 DAVKAD ASSOCIES</p>
+</footer>
+
+<script>
+function openPopup() {
+  document.getElementById("contactPopup").classList.add("active");
+}
+
+function closePopup() {
+  document.getElementById("contactPopup").classList.remove("active");
+}
+
+window.onclick = function(e) {
+  const popup = document.getElementById("contactPopup");
+  if (e.target === popup) popup.classList.remove("active");
+}
+</script>
+
+</body>
+</html>
